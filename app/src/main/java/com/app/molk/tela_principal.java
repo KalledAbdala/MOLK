@@ -28,7 +28,7 @@ public class tela_principal extends AppCompatActivity {
         btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(tela_principal.this, tela_cadastro.class);
+                Intent intent = new Intent(tela_principal.this, CadastroActivity.class);
                 startActivity(intent);
             }
         });

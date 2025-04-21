@@ -28,7 +28,7 @@
             android:exported="false" />
 
         <!-- Nova activity de cadastro -->
-        <activity android:name=".tela_cadastro" />
+        <activity android:name=".CadastroActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
