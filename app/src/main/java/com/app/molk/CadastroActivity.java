@@ -8,6 +8,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.app.molk.R;
+import com.app.molk.data.models.CadastroResponse;
 import com.app.molk.data.models.User;
 import com.app.molk.network.ApiService;
 import com.app.molk.network.RetrofitClient;
@@ -66,25 +67,22 @@ public class CadastroActivity extends AppCompatActivity {
 
         // Faz a requisição à API para cadastrar o usuário
         ApiService apiService = RetrofitClient.getRetrofitInstance().create(ApiService.class);
-        Call<Void> call = apiService.cadastrarUsuario(user);
+        Call<CadastroResponse> call = apiService.cadastrarUsuario(user);
 
-        // Envia os dados para a API
-        call.enqueue(new Callback<Void>() {
+        call.enqueue(new Callback<CadastroResponse>() {
             @Override
-            public void onResponse(Call<Void> call, Response<Void> response) {
-                if (response.isSuccessful()) {
-                    // Sucesso, faça algo, como mostrar uma mensagem ou redirecionar
-                    Toast.makeText(CadastroActivity.this, "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show();
+            public void onResponse(Call<CadastroResponse> call, Response<CadastroResponse> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    String mensagem = response.body().getMessage();
+                    Toast.makeText(CadastroActivity.this, mensagem, Toast.LENGTH_SHORT).show();
                 } else {
-                    // Erro ao enviar dados
-                    Toast.makeText(CadastroActivity.this, "Erro ao cadastrar, tente novamente.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CadastroActivity.this, "Erro ao cadastrar. Código: " + response.code(), Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
-            public void onFailure(Call<Void> call, Throwable t) {
-                // Falha na requisição
-                Toast.makeText(CadastroActivity.this, "Falha na comunicação com o servidor.", Toast.LENGTH_SHORT).show();
+            public void onFailure(Call<CadastroResponse> call, Throwable t) {
+                Toast.makeText(CadastroActivity.this, "Falha na comunicação: " + t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }
