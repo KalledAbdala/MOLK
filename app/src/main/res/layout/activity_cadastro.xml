@@ -5,304 +5,192 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CadastroActivity">
+    tools:context=".ModulosActivity">
 
     <!-- Imagem de fundo -->
+
+    <!-- Título -->
+
     <ImageView
         android:id="@+id/bgImage"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="centerCrop"
         android:src="@drawable/bg_cadastro"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <!-- Guideline para centralizar os campos -->
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/topGuide"
+    <!-- Grid com botões -->
+
+    <LinearLayout
+        android:layout_width="347dp"
+        android:layout_height="106dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_card"
+        android:elevation="4dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1"
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="724dp"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="Dashboard"
+            android:src="@drawable/ic_dashboard"
+            app:tint="#1A237E" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Dashboard"
+            android:textColor="#1A237E"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/titleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.12" />
-
-    <!-- Label Nome -->
-    <TextView
-        android:id="@+id/labelNome"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Nome"
+        android:fontFamily="@font/montserrat"
+        android:text="Módulos de Acesso"
         android:textColor="#1A237E"
-        android:textSize="16sp"
-        android:fontFamily="@font/montserrat_semibold"
-        app:layout_constraintTop_toBottomOf="@id/topGuide"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp" />
-
-    <!-- Campo Nome -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/nomeLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:boxBackgroundColor="#FFFFFF"
-        app:boxCornerRadiusTopStart="12dp"
-        app:boxCornerRadiusTopEnd="12dp"
-        app:boxCornerRadiusBottomStart="12dp"
-        app:boxCornerRadiusBottomEnd="12dp"
-        app:layout_constraintTop_toBottomOf="@id/labelNome"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="4dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp">
+        app:layout_constraintTop_toTopOf="@+id/bgImage"
+        app:layout_constraintVertical_bias="0.85" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/nomeEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#1A237E"
-            android:fontFamily="@font/montserrat" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <!-- Label Email -->
     <TextView
-        android:id="@+id/labelEmail"
-        android:layout_width="0dp"
+        android:id="@+id/titleText2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="E-mail"
+        android:fontFamily="@font/montserrat"
+        android:text="Bem vindo!"
         android:textColor="#1A237E"
-        android:textSize="16sp"
-        android:fontFamily="@font/montserrat_semibold"
-        app:layout_constraintTop_toBottomOf="@id/nomeLayout"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp" />
-
-    <!-- Campo Email -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/emailLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:boxBackgroundColor="#FFFFFF"
-        app:boxCornerRadiusTopStart="12dp"
-        app:boxCornerRadiusTopEnd="12dp"
-        app:boxCornerRadiusBottomStart="12dp"
-        app:boxCornerRadiusBottomEnd="12dp"
-        app:layout_constraintTop_toBottomOf="@id/labelEmail"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="4dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp">
+        app:layout_constraintTop_toTopOf="@+id/bgImage"
+        app:layout_constraintVertical_bias="0.637" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/emailEditText"
-            android:layout_width="match_parent"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="346dp"
+        android:layout_height="107dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_card"
+        android:elevation="4dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="37dp"
+        tools:layout_editor_absoluteY="329dp">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="Entregas"
+            android:src="@drawable/ic_residuos"
+            app:tint="#1A237E" />
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Dashboard"
             android:textColor="#1A237E"
-            android:fontFamily="@font/montserrat" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:textSize="14sp" />
+    </LinearLayout>
 
-    <!-- Label Senha -->
-    <TextView
-        android:id="@+id/labelSenha"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Senha"
-        android:textColor="#1A237E"
-        android:textSize="16sp"
-        android:fontFamily="@font/montserrat_semibold"
-        app:layout_constraintTop_toBottomOf="@id/emailLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp" />
+    <LinearLayout
+        android:layout_width="347dp"
+        android:layout_height="113dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_card"
+        android:elevation="4dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1"
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="590dp"
+        tools:ignore="MissingConstraints">
 
-    <!-- Campo Senha -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/passwordLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:boxBackgroundColor="#FFFFFF"
-        app:passwordToggleEnabled="true"
-        app:boxCornerRadiusTopStart="12dp"
-        app:boxCornerRadiusTopEnd="12dp"
-        app:boxCornerRadiusBottomStart="12dp"
-        app:boxCornerRadiusBottomEnd="12dp"
-        app:layout_constraintTop_toBottomOf="@id/labelSenha"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="4dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp">
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="Parceiros"
+            android:src="@drawable/ic_parceiros"
+            app:tint="#1A237E" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/passwordEditText"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Seus Parceiros"
             android:textColor="#1A237E"
-            android:fontFamily="@font/montserrat" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:textSize="14sp" />
+    </LinearLayout>
 
-    <!-- Label Atividade -->
-    <TextView
-        android:id="@+id/labelAtividade"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="O que sua empresa faz com os resíduos?"
-        android:textColor="#1A237E"
-        android:textSize="16sp"
-        android:fontFamily="@font/montserrat_semibold"
-        app:layout_constraintTop_toBottomOf="@id/passwordLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp" />
+    <LinearLayout
+        android:layout_width="345dp"
+        android:layout_height="111dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_card"
+        android:elevation="4dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1"
+        tools:layout_editor_absoluteX="37dp"
+        tools:layout_editor_absoluteY="457dp"
+        tools:ignore="MissingConstraints">
 
-    <!-- Campo Atividade -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/atividadeLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:boxBackgroundColor="#FFFFFF"
-        app:boxCornerRadiusTopStart="12dp"
-        app:boxCornerRadiusTopEnd="12dp"
-        app:boxCornerRadiusBottomStart="12dp"
-        app:boxCornerRadiusBottomEnd="12dp"
-        app:layout_constraintTop_toBottomOf="@id/labelAtividade"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="4dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp">
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="Entregas"
+            android:src="@drawable/ic_entregas"
+            app:tint="#1A237E" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/atividadeEditText"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Entregas"
             android:textColor="#1A237E"
-            android:fontFamily="@font/montserrat" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:textSize="14sp" />
+    </LinearLayout>
 
-    <!-- Label Empresa -->
-    <TextView
-        android:id="@+id/labelEmpresa"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Empresa"
-        android:textColor="#1A237E"
-        android:textSize="16sp"
-        android:fontFamily="@font/montserrat_semibold"
-        app:layout_constraintTop_toBottomOf="@id/atividadeLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp" />
-
-    <!-- Campo Empresa -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/empresaLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:boxBackgroundColor="#FFFFFF"
-        app:boxCornerRadiusTopStart="12dp"
-        app:boxCornerRadiusTopEnd="12dp"
-        app:boxCornerRadiusBottomStart="12dp"
-        app:boxCornerRadiusBottomEnd="12dp"
-        app:layout_constraintTop_toBottomOf="@id/labelEmpresa"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="4dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/empresaEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#1A237E"
-            android:fontFamily="@font/montserrat" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <!-- Label Telefone -->
-    <TextView
-        android:id="@+id/labelTelefone"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Telefone"
-        android:textColor="#1A237E"
-        android:textSize="16sp"
-        android:fontFamily="@font/montserrat_semibold"
-        app:layout_constraintTop_toBottomOf="@id/empresaLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp" />
-
-    <!-- Campo Telefone -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/telefoneLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:boxBackgroundColor="#FFFFFF"
-        app:boxCornerRadiusTopStart="12dp"
-        app:boxCornerRadiusTopEnd="12dp"
-        app:boxCornerRadiusBottomStart="12dp"
-        app:boxCornerRadiusBottomEnd="12dp"
-        app:layout_constraintTop_toBottomOf="@id/labelTelefone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="4dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/telefoneEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="phone"
-            android:textColor="#1A237E"
-            android:fontFamily="@font/montserrat" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <!-- Botão Enviar -->
-    <Button
-        android:id="@+id/btn_enviar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Enviar"
-        android:fontFamily="@font/montserrat_semibold"
-        android:textSize="18sp"
-        android:textColor="#3F51B5"
-        android:backgroundTint="#FFFFFF"
-        app:layout_constraintTop_toBottomOf="@id/telefoneLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        app:cornerRadius="16dp"
-        app:strokeColor="#3F51B5"
-        app:strokeWidth="2dp"
-        app:rippleColor="#E7EFE7" />
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="102dp"
+        android:layout_height="90dp"
+        app:srcCompat="@drawable/ic_user_placeholder"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="74dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
