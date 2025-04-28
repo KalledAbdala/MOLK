@@ -30,9 +30,12 @@ Busca solucionar o desafio da gestão inadequada de resíduos industriais, que l
 
 ## 🖼️ Banner Final
 
+ **Link-** https://github.com/KalledAbdala/MOLK/blob/main/Banner_ECOMOLK%5B1%5D.pptx
 ---
 
 ## 🧠 Artigo Técnico 
+
+**Link-** https://github.com/KalledAbdala/MOLK/blob/main/Artigo_Tecnico_ECOMOLK.pdf
 
 
 
