@@ -10,16 +10,37 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="437dp"
-        android:layout_height="855dp"
+        android:layout_width="409dp"
+        android:layout_height="849dp"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@drawable/bg_telaprincipal" />
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/background_telaprincipal_v3" />
+
+    <Button
+        android:id="@+id/btn_cadastrar"
+        android:layout_width="306dp"
+        android:layout_height="62dp"
+        android:layout_marginBottom="212dp"
+        android:autoLink="none"
+        android:backgroundTint="#FDFDFD"
+        android:fontFamily="@font/montserrat_semibold"
+        android:foregroundTint="#4CAF50"
+        android:includeFontPadding="false"
+        android:shadowColor="#4CAF50"
+        android:text="Cadastre-se"
+        android:textColor="#1F775A"
+        android:textColorLink="@null"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="#E7EFE7" />
 
     <TextView
         android:id="@+id/textView2"
@@ -34,28 +55,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_cadastrar"
-        app:layout_constraintVertical_bias="0.104" />
-
-    <Button
-        android:id="@+id/btn_cadastrar"
-        android:layout_width="306dp"
-        android:layout_height="62dp"
-        android:layout_marginBottom="268dp"
-        android:autoLink="none"
-        android:backgroundTint="#FDFDFD"
-        android:fontFamily="@font/montserrat_semibold"
-        android:foregroundTint="#4CAF50"
-        android:includeFontPadding="false"
-        android:shadowColor="#4CAF50"
-        android:text="Cadastre-se"
-        android:textColor="#3F51B5"
-        android:textColorLink="@null"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:rippleColor="#E7EFE7" />
+        app:layout_constraintVertical_bias="0.118" />
 
     <Button
         android:id="@+id/btn_login"
@@ -66,7 +66,7 @@
         android:foregroundTint="#4CAF50"
         android:shadowColor="#4CAF50"
         android:text="Login"
-        android:textColor="#3F51B5"
+        android:textColor="#1F775A"
         android:textColorLink="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_cadastrar"
@@ -74,7 +74,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.945"
+        app:layout_constraintVertical_bias="0.947"
         app:rippleColor="#E7EFE7" />
 
     <androidx.constraintlayout.widget.Guideline

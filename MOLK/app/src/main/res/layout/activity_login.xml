@@ -8,44 +8,54 @@
     android:scrollbarStyle="outsideInset"
     tools:context=".tela_login">
 
+
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="790dp"
-        android:layout_height="1182dp"
+        android:layout_width="448dp"
+        android:layout_height="909dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.873"
+        app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.47"
-        app:srcCompat="@drawable/bg_login" />
+        app:layout_constraintVertical_bias="0.331"
+        app:srcCompat="@drawable/background_login_3" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
+        android:layout_width="351dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="412dp"
+        android:background="@drawable/edittext_background"
+        android:elevation="2dp"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="12dp"
+        android:textColor="#000000"
+        android:textColorHint="#1F775A"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
+        android:layout_width="351dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/edittext_background"
+        android:elevation="2dp"
         android:hint="Senha"
+        android:textColorHint="#1F775A"
         android:inputType="textPassword"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="12dp"
+        android:textSize="16sp"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress"
-        app:layout_constraintVertical_bias="0.225" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
 
     <Button
         android:id="@+id/button"
@@ -56,15 +66,15 @@
         android:foregroundTint="#4CAF50"
         android:shadowColor="#4CAF50"
         android:text="Login"
-        android:textColor="#3F51B5"
+        android:textColor="#1F775A"
         android:textColorLink="#FFFFFF"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
-        app:layout_constraintVertical_bias="0.245"
+        app:layout_constraintVertical_bias="0.187"
         app:rippleColor="#E7EFE7" />
 
     <TextView
@@ -74,12 +84,12 @@
         android:fontFamily="@font/montserrat_semibold"
         android:foregroundTint="#FDFDFD"
         android:text="Faça seu login"
-        android:textSize="24sp"
         android:textColor="#FFFFFF"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.736" />
+        app:layout_constraintVertical_bias="0.796" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
