@@ -1,5 +1,6 @@
 package com.app.molk;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -69,7 +70,9 @@ public class tela_login extends AppCompatActivity {
                             Toast.makeText(tela_login.this, "Usuário não encontrado", Toast.LENGTH_SHORT).show();
                         } else {
                             Toast.makeText(tela_login.this, "Login realizado com sucesso", Toast.LENGTH_SHORT).show();
-                            // Aqui você pode navegar para outra tela, se necessário
+                            Intent intent = new Intent(tela_login.this, ModulosActivity.class);
+                            startActivity(intent);
+                            finish();
                         }
                     } catch (Exception e) {
                         Log.e("LOGIN", "Erro ao ler resposta", e);

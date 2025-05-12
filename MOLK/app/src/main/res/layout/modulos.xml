@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,126 +7,199 @@
     android:background="@color/white"
     tools:context=".ModulosActivity">
 
-    <!-- Fundo -->
-    <ImageView
-        android:id="@+id/bgImage"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/bg_cadastro"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+    <!-- Header -->
 
-    <!-- Header com avatar e boas-vindas -->
+    <!-- Título -->
+
+    <!-- Container com os botões -->
+
     <LinearLayout
         android:id="@+id/headerLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_width="403dp"
+        android:layout_height="164dp"
+        android:background="#336856"
+        android:gravity="center"
+        android:orientation="vertical"
         android:padding="20dp"
-        android:gravity="center_vertical"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:src="@drawable/ic_user_placeholder"
-            android:contentDescription="Avatar do usuário"
+            android:layout_width="71dp"
+            android:layout_height="73dp"
             android:scaleType="centerCrop"
-            app:shapeAppearanceOverlay="@style/CircleImage"
-            android:layout_marginEnd="16dp" />
+            android:src="@drawable/ic_user_placeholder"
+            android:tint="@color/white"
+            app:shapeAppearanceOverlay="@style/CircleImage" />
 
         <TextView
             android:id="@+id/welcomeText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="248dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/montserrat_semibold"
             android:text="Bem-vindo, Fulano"
-            android:textColor="#1A237E"
-            android:textSize="18sp"
-            android:fontFamily="@font/montserrat_semibold" />
+            android:textColor="#FFFFFF"
+            android:textSize="25sp" />
     </LinearLayout>
 
-    <!-- Título principal -->
-    <TextView
-        android:id="@+id/titleText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Módulos de Acesso"
-        android:textColor="#1A237E"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:fontFamily="@font/montserrat"
-        android:layout_marginTop="12dp"
-        app:layout_constraintTop_toBottomOf="@id/headerLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <!-- Grid dos módulos -->
-    <androidx.gridlayout.widget.GridLayout
-        android:id="@+id/gridModulos"
+    <LinearLayout
+        android:id="@+id/buttonContainer"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        app:columnCount="1"
-        app:layout_constraintTop_toBottomOf="@id/titleText"
-        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="vertical"
+        android:padding="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:rowCount="4">
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.684"
+        tools:ignore="MissingConstraints">
 
-        <!-- Cards -->
-        <!-- Card modelo reutilizável: copie para os outros módulos -->
+        <!-- Botão 1 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp">
 
-        <!-- Resíduos -->
-        <LinearLayout
-            style="@style/ModuloCard"
-            app:layout_rowWeight="1">
-            <ImageView
-                style="@style/IconModulo"
-                android:src="@drawable/ic_residuos" />
-            <TextView
-                style="@style/TextModulo"
-                android:text="Seus Resíduos" />
-        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
 
-        <!-- Entregas -->
-        <LinearLayout
-            style="@style/ModuloCard"
-            app:layout_rowWeight="1">
-            <ImageView
-                style="@style/IconModulo"
-                android:src="@drawable/ic_entregas" />
-            <TextView
-                style="@style/TextModulo"
-                android:text="Entregas" />
-        </LinearLayout>
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginEnd="16dp"
+                    android:contentDescription="Ícone Resíduos"
+                    android:src="@drawable/ic_residuos" />
 
-        <!-- Parceiros -->
-        <LinearLayout
-            style="@style/ModuloCard"
-            app:layout_rowWeight="1">
-            <ImageView
-                style="@style/IconModulo"
-                android:src="@drawable/ic_parceiros" />
-            <TextView
-                style="@style/TextModulo"
-                android:text="Seus Parceiros" />
-        </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Seus Resíduos"
+                    android:textColor="#336856"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-        <!-- Dashboard -->
-        <LinearLayout
-            style="@style/ModuloCard"
-            app:layout_rowWeight="1">
-            <ImageView
-                style="@style/IconModulo"
-                android:src="@drawable/ic_dashboard" />
-            <TextView
-                style="@style/TextModulo"
-                android:text="Dashboard" />
-        </LinearLayout>
-    </androidx.gridlayout.widget.GridLayout>
+        <!-- Botão 2 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="18dp">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginEnd="18dp"
+                    android:contentDescription="Ícone Entregas"
+                    android:src="@drawable/ic_entregas" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Entregas"
+                    android:textColor="#336856"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Botão 3 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="18dp">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginEnd="16dp"
+                    android:contentDescription="Ícone Parceiros"
+                    android:src="@drawable/ic_parceiros" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Seus Parceiros"
+                    android:textColor="#336856"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Botão 4 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="18dp">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginEnd="16dp"
+                    android:contentDescription="Ícone Dashboard"
+                    android:src="@drawable/ic_dashboard" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Dashboard"
+                    android:textColor="#336856"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="245dp"
+        android:layout_height="29dp"
+        android:layout_marginBottom="36dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="MÓDULOS DE ACESSO"
+        android:textColor="#336856"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

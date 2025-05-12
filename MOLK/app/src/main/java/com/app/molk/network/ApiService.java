@@ -9,11 +9,11 @@ import retrofit2.http.Body;
 import retrofit2.http.POST;
 
 public interface ApiService {
-    @POST("/cadastrar") // Rota para o cadastro
+    @POST("usuarios/cadastrar") // Rota para o cadastro
     Call<CadastroResponse> cadastrarUsuario(@Body User user);
 
 
-    @POST("login")
+    @POST("usuarios/login")
     Call<ResponseBody> login(@Body JsonObject loginData);
 }
 
