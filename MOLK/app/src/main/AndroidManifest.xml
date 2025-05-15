@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -14,21 +15,21 @@
         android:theme="@style/Theme.Molk"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-
+        <activity
+            android:name=".SeusResiduosActivity"
+            android:exported="false" />
         <activity
             android:name=".tela_principal"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".tela_login"
-            android:exported="false" />
-
-        <!-- Nova activity de cadastro -->
+            android:exported="false" /> <!-- Nova activity de cadastro -->
         <activity android:name=".CadastroActivity" />
 
         <meta-data
@@ -36,7 +37,6 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity android:name=".ModulosActivity" />
-
     </application>
 
 </manifest>

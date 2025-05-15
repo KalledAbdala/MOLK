@@ -15,8 +15,8 @@
 
     <LinearLayout
         android:id="@+id/headerLayout"
-        android:layout_width="403dp"
-        android:layout_height="164dp"
+        android:layout_width="430dp"
+        android:layout_height="279dp"
         android:background="#336856"
         android:gravity="center"
         android:orientation="vertical"
@@ -27,19 +27,26 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
+        <ImageView
+            android:id="@+id/projectLogo"
+            android:layout_width="166dp"
+            android:layout_height="76dp"
+            android:layout_marginBottom="20dp"
+            android:contentDescription="Logo do Projeto"
+            android:src="@drawable/logo" />
+
         <com.google.android.material.imageview.ShapeableImageView
             android:layout_width="71dp"
             android:layout_height="73dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_user_placeholder"
-            android:tint="@color/white"
+            android:src="@drawable/bonequinho_de_user_padrao"
             app:shapeAppearanceOverlay="@style/CircleImage" />
 
         <TextView
             android:id="@+id/welcomeText"
             android:layout_width="248dp"
             android:layout_height="43dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="15dp"
             android:fontFamily="@font/montserrat_semibold"
             android:text="Bem-vindo, Fulano"
             android:textColor="#FFFFFF"
@@ -54,10 +61,10 @@
         android:padding="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.684"
+        app:layout_constraintVertical_bias="0.731"
         tools:ignore="MissingConstraints">
 
         <!-- Botão 1 -->
@@ -65,6 +72,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="#FFFFFF"
             app:cardCornerRadius="16dp"
             app:cardElevation="6dp">
 
@@ -85,7 +93,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_medium"
+                    android:fontFamily="@font/montserrat_semibold"
                     android:text="Seus Resíduos"
                     android:textColor="#336856"
                     android:textSize="18sp" />
@@ -97,6 +105,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="#FFFFFF"
             app:cardCornerRadius="16dp"
             app:cardElevation="6dp">
 
@@ -117,7 +126,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_medium"
+                    android:fontFamily="@font/montserrat_semibold"
                     android:text="Entregas"
                     android:textColor="#336856"
                     android:textSize="18sp" />
@@ -129,6 +138,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="#FFFFFF"
             app:cardCornerRadius="18dp"
             app:cardElevation="6dp">
 
@@ -149,7 +159,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_medium"
+                    android:fontFamily="@font/montserrat_semibold"
                     android:text="Seus Parceiros"
                     android:textColor="#336856"
                     android:textSize="18sp" />
@@ -160,6 +170,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:cardBackgroundColor="#FFFFFF"
             app:cardCornerRadius="18dp"
             app:cardElevation="6dp">
 
@@ -180,7 +191,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_medium"
+                    android:fontFamily="@font/montserrat_semibold"
                     android:text="Dashboard"
                     android:textColor="#336856"
                     android:textSize="18sp" />
@@ -192,8 +203,9 @@
         android:id="@+id/textView3"
         android:layout_width="245dp"
         android:layout_height="29dp"
-        android:layout_marginBottom="36dp"
-        android:fontFamily="@font/montserrat_medium"
+        app:cardBackgroundColor="#3EB48D14"
+        android:layout_marginBottom="64dp"
+        android:fontFamily="@font/montserrat_semibold"
         android:text="MÓDULOS DE ACESSO"
         android:textColor="#336856"
         android:textSize="20sp"
@@ -201,5 +213,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/btnIrSeusResiduos"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/seta_para_esquerda"
+        android:contentDescription="Ir para Seus Resíduos"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
