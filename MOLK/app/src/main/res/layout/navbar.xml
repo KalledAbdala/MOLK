@@ -1,43 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.Toolbar
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navbar"
     android:layout_width="match_parent"
-    android:layout_height="116dp"
+    android:layout_height="wrap_content"
     android:background="#3EB48D"
-    android:contentInsetStart="0dp"
-    android:contentInsetLeft="0dp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
+    android:padding="12dp">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="116dp"
-        android:paddingStart="-10dp"
-        android:paddingEnd="0dp">
+    <!-- Ícone de menu (três linhas) alinhado à esquerda -->
+    <ImageView
+        android:id="@+id/menuIcon"
+        android:layout_width="57dp"
+        android:layout_height="48dp"
+        android:clickable="true"
+        android:contentDescription="Menu"
+        android:focusable="true"
+        android:src="@drawable/cardpio_navbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
 
-        <!-- Ícone de menu (três linhas) alinhado à esquerda -->
-        <ImageView
-            android:id="@+id/menuIcon"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="16dp"
-            android:contentDescription="Menu"
-            android:src="@drawable/cardpio_navbar" />
+    <!-- Logo centralizado -->
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="193dp"
+        android:layout_height="95dp"
+        android:contentDescription="Logo"
+        android:src="@drawable/logo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
 
-        <!-- Logo com posição ajustável manualmente -->
-        <ImageView
-            android:id="@+id/logoImage"
-            android:layout_width="193dp"
-            android:layout_height="95dp"
-            android:layout_centerInParent="true"
-            android:contentDescription="Logo"
-            android:src="@drawable/logo" />
-
-    </RelativeLayout>
-
-</androidx.appcompat.widget.Toolbar>
+</androidx.constraintlayout.widget.ConstraintLayout>
