@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navbar"
+    android:layout_width="match_parent"
+    android:layout_height="116dp"
+    android:background="#3EB48D"
+    android:contentInsetStart="0dp"
+    android:contentInsetLeft="0dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="116dp"
+        android:paddingStart="-10dp"
+        android:paddingEnd="0dp">
+
+        <!-- Ícone de menu (três linhas) alinhado à esquerda -->
+        <ImageView
+            android:id="@+id/menuIcon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:contentDescription="Menu"
+            android:src="@drawable/cardpio_navbar" />
+
+        <!-- Logo com posição ajustável manualmente -->
+        <ImageView
+            android:id="@+id/logoImage"
+            android:layout_width="193dp"
+            android:layout_height="95dp"
+            android:layout_centerInParent="true"
+            android:contentDescription="Logo"
+            android:src="@drawable/logo" />
+
+    </RelativeLayout>
+
+</androidx.appcompat.widget.Toolbar>

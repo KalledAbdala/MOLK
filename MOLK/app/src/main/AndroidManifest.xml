@@ -16,6 +16,21 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".seusParceirosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".dashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".cadastrarResiduoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".dashboardAcitivity"
+            android:exported="false" />
+        <activity
+            android:name=".entregasActivity"
+            android:exported="false" />
+        <activity
             android:name=".SeusResiduosActivity"
             android:exported="false" />
         <activity

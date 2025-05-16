@@ -1,0 +1,64 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    android:elevation="8dp"
+    android:radius="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+
+        <!-- Cilindro verde com "Tipo" centralizado -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_cilindro_verde"
+            android:layout_marginBottom="0dp">
+
+            <TextView
+                android:id="@+id/tipoResiduo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Tipo"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+        </FrameLayout>
+
+        <!-- Imagem do resíduo -->
+        <ImageView
+            android:id="@+id/imagemResiduo"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp" />
+
+        <!-- Cilindro verde claro com descrição, texto centralizado -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_cilindro_verde_claro"
+            android:layout_marginTop="0dp">
+
+            <TextView
+                android:id="@+id/descricaoResiduo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Descrição"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp" />
+
+        </FrameLayout>
+
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

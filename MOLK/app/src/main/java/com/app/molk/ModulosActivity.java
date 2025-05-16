@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 public class ModulosActivity extends AppCompatActivity {
     @Override
@@ -13,6 +14,30 @@ public class ModulosActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.modulos);
 
+        CardView btnResiduos = findViewById(R.id.cardResiduos);
+        CardView btnEntregas = findViewById(R.id.cardEntregas);
+        CardView btnParceiros = findViewById(R.id.cardParceiros);
+        CardView btnDashboard = findViewById(R.id.cardDashboard);
+
+        btnResiduos.setOnClickListener(v -> {
+            Intent intent = new Intent(this, SeusResiduosActivity.class);
+            startActivity(intent);
+        });
+
+        btnEntregas.setOnClickListener(v -> {
+            Intent intent = new Intent(this, entregasActivity.class);
+            startActivity(intent);
+        });
+
+        btnParceiros.setOnClickListener(v -> {
+            Intent intent = new Intent(this, seusParceirosActivity.class);
+            startActivity(intent);
+        });
+
+        btnDashboard.setOnClickListener(v -> {
+            Intent intent = new Intent(this, dashboardAcitivity.class);
+            startActivity(intent);
+        });
 
 
         ImageView btnIrSeusResiduos = findViewById(R.id.btnIrSeusResiduos);

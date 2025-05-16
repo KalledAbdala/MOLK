@@ -69,6 +69,7 @@
 
         <!-- Botão 1 -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardResiduos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
@@ -102,6 +103,7 @@
 
         <!-- Botão 2 -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardEntregas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
@@ -135,6 +137,7 @@
 
         <!-- Botão 3 -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardParceiros"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
@@ -168,6 +171,7 @@
 
         <!-- Botão 4 -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardDashboard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardBackgroundColor="#FFFFFF"
