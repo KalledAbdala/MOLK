@@ -1,11 +1,11 @@
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-
+    android:layout_height="match_parent"
+    tools:context=".dashboardAcitivity">
 
     <include
         layout="@layout/navbar"
@@ -32,19 +32,19 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/montserrat_semibold"
             android:gravity="center"
-            android:text="SEUS RESÍDUOS"
+            android:text="DASHBOARD"
             android:textColor="#3EB48D"
             android:textSize="20sp" />
     </FrameLayout>
 
 
     <Button
-        android:id="@+id/btnAdicionarResiduo"
+        android:id="@+id/btnFiltrar"
         android:layout_width="233dp"
         android:layout_height="55dp"
         android:backgroundTint="#0AAE77"
@@ -53,24 +53,24 @@
         android:paddingTop="12dp"
         android:paddingEnd="24dp"
         android:paddingBottom="12dp"
-        android:text="ADICIONAR RESÍDUO"
+        android:text="FILTRAR"
         android:textColor="#FFFFFF"
         android:textSize="14sp"
         app:cornerRadius="16dp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="89dp"
-        tools:layout_editor_absoluteY="169dp" />
+        tools:layout_editor_absoluteY="159dp" />
 
     <ScrollView
         android:id="@+id/scrollArea"
-        android:layout_width="381dp"
-        android:layout_height="680dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="#FFFFFF"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/btnFiltrar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnAdicionarResiduo">
-
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:id="@+id/scrollContent"
@@ -88,6 +88,5 @@
 
         </LinearLayout>
     </ScrollView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
