@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -7,7 +8,6 @@
     android:layout_height="match_parent"
     tools:context=".cadastrarResiduoActivity">
 
-    <!-- ScrollView com imagem de fundo e conteúdo -->
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="0dp"
@@ -22,16 +22,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <!-- Imagem de fundo com altura fixa -->
             <ImageView
                 android:id="@+id/imageViewFundo"
                 android:layout_width="match_parent"
-                android:layout_height="1000dp"
+                android:layout_height="1200dp"
                 android:scaleType="centerCrop"
                 android:contentDescription="Imagem de fundo"
                 app:srcCompat="@drawable/background_login_3" />
 
-            <!-- Conteúdo do formulário -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -39,101 +37,97 @@
                 android:padding="24dp"
                 android:gravity="center_horizontal">
 
-                <!-- Espaçador opcional -->
-
+                <!-- Espaço no topo -->
                 <View
-                    android:layout_width="29dp"
-                    android:layout_height="339dp" />
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp" />
 
                 <EditText
-                    android:id="@+id/nomeEditText"
+                    android:id="@+id/tipo"
                     android:layout_width="match_parent"
                     android:layout_height="59dp"
                     android:background="@drawable/edittext_background"
-                    android:hint="Nome"
+                    android:hint="Tipo do resíduo"
                     android:textColorHint="#1F775A"
                     android:padding="15dp"
                     android:textColor="#000000"
                     android:textSize="16sp" />
 
                 <EditText
-                    android:id="@+id/emailEditText"
+                    android:id="@+id/descricao"
                     android:layout_width="match_parent"
                     android:layout_height="59dp"
                     android:layout_marginTop="15dp"
                     android:background="@drawable/edittext_background"
-                    android:hint="Email"
+                    android:hint="Descrição"
                     android:textColorHint="#1F775A"
-                    android:inputType="textEmailAddress"
-                    android:padding="12dp"
+                    android:padding="15dp"
                     android:textColor="#000000"
                     android:textSize="16sp" />
 
                 <EditText
-                    android:id="@+id/passwordEditText"
+                    android:id="@+id/quantidade"
                     android:layout_width="match_parent"
                     android:layout_height="59dp"
                     android:layout_marginTop="15dp"
                     android:background="@drawable/edittext_background"
-                    android:hint="Senha"
+                    android:hint="Quantidade"
                     android:textColorHint="#1F775A"
-                    android:inputType="textPassword"
-                    android:padding="12dp"
+                    android:inputType="numberDecimal"
+                    android:padding="15dp"
                     android:textColor="#000000"
                     android:textSize="16sp" />
 
                 <EditText
-                    android:id="@+id/atividadeEditText"
+                    android:id="@+id/formaDeDescarte"
                     android:layout_width="match_parent"
                     android:layout_height="59dp"
                     android:layout_marginTop="15dp"
                     android:background="@drawable/edittext_background"
-                    android:hint="Atividade / Resíduo"
+                    android:hint="Forma de descarte"
                     android:textColorHint="#1F775A"
-                    android:padding="12dp"
-                    android:textColor="#000000"
-                    android:textSize="16sp" />
-
-                <EditText
-                    android:id="@+id/empresaEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="59dp"
-                    android:layout_marginTop="15dp"
-                    android:background="@drawable/edittext_background"
-                    android:hint="Empresa"
-                    android:textColorHint="#1F775A"
-                    android:padding="12dp"
-                    android:textColor="#000000"
-                    android:textSize="16sp" />
-
-                <EditText
-                    android:id="@+id/telefoneEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="59dp"
-                    android:layout_marginTop="15dp"
-                    android:background="@drawable/edittext_background"
-                    android:hint="Telefone"
-                    android:textColorHint="#1F775A"
-                    android:inputType="phone"
-                    android:padding="12dp"
+                    android:padding="15dp"
                     android:textColor="#000000"
                     android:textSize="16sp" />
 
                 <Button
-                    android:id="@+id/btn_enviar"
+                    android:id="@+id/btnSelecionarImagem"
                     android:layout_width="match_parent"
                     android:layout_height="59dp"
                     android:layout_marginTop="20dp"
                     android:backgroundTint="#FDFDFD"
                     android:fontFamily="@font/montserrat_semibold"
                     android:foregroundTint="#4CAF50"
-                    android:shadowColor="#4CAF50"
-                    android:text="Cadastrar"
+                    android:text="Selecionar Imagem"
                     android:textColor="#1F775A"
-                    android:textColorLink="#FFFFFF"
                     android:textSize="16sp"
                     app:rippleColor="#E7EFE7" />
 
+                <ImageView
+                    android:id="@+id/imagemSelecionada"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="12dp"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="Imagem selecionada"
+                    android:background="@drawable/edittext_background" />
+
+                <Button
+                    android:id="@+id/btn_enviar_residuo"
+                    android:layout_width="match_parent"
+                    android:layout_height="59dp"
+                    android:layout_marginTop="24dp"
+                    android:backgroundTint="#FDFDFD"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:foregroundTint="#4CAF50"
+                    android:text="Cadastrar Resíduo"
+                    android:textColor="#1F775A"
+                    android:textSize="16sp"
+                    app:rippleColor="#E7EFE7" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp" />
             </LinearLayout>
         </FrameLayout>
     </ScrollView>
