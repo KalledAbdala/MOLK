@@ -25,6 +25,7 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -32,23 +33,21 @@ android {
 }
 
 dependencies {
+    // AndroidX e Material Design
     implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("androidx.activity:activity:1.6.1")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation ("com.google.android.material:material:1.11.0")
+    implementation("androidx.activity:activity:1.8.0") // mantida apenas a versão mais recente
+    implementation("com.google.android.material:material:1.11.0")
+    implementation("androidx.gridlayout:gridlayout:1.0.0")
 
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-
-    // Retrofit
+    // Retrofit + Gson
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
-    implementation ("androidx.activity:activity:1.8.0")
-
-    implementation ("androidx.gridlayout:gridlayout:1.0.0")
-
+    // Testes
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 }
 
 configurations.all {
@@ -59,6 +58,3 @@ configurations.all {
         }
     }
 }
-
-
-

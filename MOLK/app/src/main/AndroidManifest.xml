@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+
+
 
     <application
         android:allowBackup="true"
@@ -17,9 +21,6 @@
         tools:targetApi="31">
         <activity
             android:name=".seusParceirosActivity"
-            android:exported="false" />
-        <activity
-            android:name=".dashboardActivity"
             android:exported="false" />
         <activity
             android:name=".cadastrarResiduoActivity"
