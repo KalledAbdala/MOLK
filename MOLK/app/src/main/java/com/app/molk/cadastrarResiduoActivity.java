@@ -46,21 +46,24 @@ public class cadastrarResiduoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastrar_residuo);
 
-        // Verificar permissões
         verificarPermissoes();
 
-        // Pegando token e id do usuário
+        // Use a mesma chave que você usa no login para buscar o token no SharedPreferences
         sharedPreferences = getSharedPreferences("APP_PREFS", Context.MODE_PRIVATE);
-        token = sharedPreferences.getString("token", null);
+
+        // Atenção: aqui pode ser "token" ou "auth_token" dependendo de onde você salvou no login
+        // Altere conforme o nome da chave usada no login
+        String rawToken = sharedPreferences.getString("token", null);
         usuarioId = sharedPreferences.getInt("id_usuario", -1);
 
-        if (token == null || usuarioId == -1) {
-            Toast.makeText(this, "Usuário não autenticado", Toast.LENGTH_SHORT).show();
+        if (rawToken == null || usuarioId == -1) {
+            Toast.makeText(this, "Usuário não autenticado. Faça login novamente.", Toast.LENGTH_SHORT).show();
             finish();
             return;
         }
+        // Coloca o prefixo "Bearer " antes do token para autorização
+        token = "Bearer " + rawToken;
 
-        // Inicializar componentes
         Button btnSelecionarImagem = findViewById(R.id.btnSelecionarImagem);
         imagemSelecionada = findViewById(R.id.imagemSelecionada);
 
@@ -139,10 +142,10 @@ public class cadastrarResiduoActivity extends AppCompatActivity {
         RequestBody usuarioIdPart = RequestBody.create(MediaType.parse("text/plain"), String.valueOf(usuarioId));
 
         ApiService apiService = RetrofitClient.getRetrofitInstance().create(ApiService.class);
-        String authHeader = "Bearer " + token;
 
+        // Passa o token já com "Bearer " no header Authorization
         Call<ResponseBody> call = apiService.cadastrarResiduo(
-                authHeader,
+                token,
                 imagemPart,
                 tipo,
                 descricao,

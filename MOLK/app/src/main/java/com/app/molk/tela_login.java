@@ -72,13 +72,13 @@ public class tela_login extends AppCompatActivity {
 
                         JSONObject json = new JSONObject(responseBody);
 
-                        String token = json.getString("token");
+                        String tokenRecebido = json.getString("token");
                         int userId = json.getJSONObject("usuario").getInt("id");
 
-                        // ✅ Salvar o token com a chave "auth_token"
+                        // Salvar token e id_usuario usando as mesmas chaves e nome da SharedPreferences do SeusResiduosActivity
                         SharedPreferences prefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
                         SharedPreferences.Editor editor = prefs.edit();
-                        editor.putString("auth_token", token);
+                        editor.putString("auth_token", tokenRecebido.trim());
                         editor.putInt("id_usuario", userId);
                         editor.apply();
 

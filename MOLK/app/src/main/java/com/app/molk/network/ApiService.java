@@ -2,6 +2,7 @@ package com.app.molk.network;
 
 import com.app.molk.data.models.CadastroResponse;
 import com.app.molk.data.models.Residuo;
+import com.app.molk.data.models.ResiduosResponse;
 import com.app.molk.data.models.User;
 import com.google.gson.JsonObject;
 
@@ -39,8 +40,13 @@ public interface ApiService {
             @Part("id_usuario") RequestBody usuarioId
     );
 
-    @GET("/residuos")
-    Call<List<Residuo>> getResiduosDoUsuario(@Header("Authorization") String token);
+
+    @GET("/residuos/seus")
+    Call<ResiduosResponse> getResiduosDoUsuario(@Header("Authorization") String token);
+
+
+
+
 
 }
 

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- Navbar -->
     <include
         layout="@layout/navbar"
         android:id="@+id/navbar_included"
@@ -23,9 +24,9 @@
         android:background="@drawable/bg_cilindro"
         android:paddingHorizontal="20dp"
         android:paddingVertical="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
             android:id="@+id/textView3"
@@ -38,7 +39,7 @@
             android:textSize="20sp" />
     </FrameLayout>
 
-    <!-- Botão corrigido -->
+    <!-- Botão -->
     <Button
         android:id="@+id/btnAdicionarResiduo"
         android:layout_width="233dp"
@@ -58,12 +59,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- ScrollView corrigido -->
+    <!-- Área rolável com os cards -->
     <ScrollView
         android:id="@+id/scrollArea"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="#FFFFFF"
+        android:fillViewport="true"
         app:layout_constraintTop_toBottomOf="@+id/btnAdicionarResiduo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,16 +76,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="16dp" />
 
-            <!-- Conteúdo de exemplo -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Conteúdo dentro do scroll"
-                android:textSize="18sp" />
-
-        </LinearLayout>
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
