@@ -56,7 +56,6 @@ public class tela_login extends AppCompatActivity {
 
         ApiService apiService = RetrofitClient.getRetrofitInstance().create(ApiService.class);
 
-        // Monta o JSON para login usando Gson JsonObject
         JsonObject loginData = new JsonObject();
         loginData.addProperty("email", email);
         loginData.addProperty("senha", senha);
@@ -76,10 +75,10 @@ public class tela_login extends AppCompatActivity {
                         String token = json.getString("token");
                         int userId = json.getJSONObject("usuario").getInt("id");
 
-                        // Salva token e id_usuario no SharedPreferences
-                        SharedPreferences prefs = getSharedPreferences("APP_PREFS", MODE_PRIVATE);
+                        // ✅ Salvar o token com a chave "auth_token"
+                        SharedPreferences prefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
                         SharedPreferences.Editor editor = prefs.edit();
-                        editor.putString("token", token);
+                        editor.putString("auth_token", token);
                         editor.putInt("id_usuario", userId);
                         editor.apply();
 
