@@ -1,6 +1,7 @@
 package com.app.molk.network;
 
 import com.app.molk.data.models.CadastroResponse;
+import com.app.molk.data.models.NovoStatusBody;
 import com.app.molk.data.models.Residuo;
 import com.app.molk.data.models.ResiduosResponse;
 import com.app.molk.data.models.User;
@@ -16,8 +17,12 @@ import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.Multipart;
+import retrofit2.http.PATCH;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Part;
+import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface ApiService {
 
@@ -43,6 +48,14 @@ public interface ApiService {
 
     @GET("/residuos/seus")
     Call<ResiduosResponse> getResiduosDoUsuario(@Header("Authorization") String token);
+
+
+    @PUT("residuos/atualizar/{id}")
+    Call<Void> atualizarStatusResiduo(
+            @Header("Authorization") String token,
+            @Path("id") int idResiduo,
+            @Body NovoStatusBody statusBody
+    );
 
 
 

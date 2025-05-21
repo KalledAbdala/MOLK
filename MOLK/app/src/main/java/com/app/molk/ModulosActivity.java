@@ -15,12 +15,19 @@ public class ModulosActivity extends AppCompatActivity {
         setContentView(R.layout.modulos);
 
         CardView btnResiduos = findViewById(R.id.cardResiduos);
+        CardView btncardResiduosDeParceiros = findViewById(R.id.cardResiduosDeParceiros);
         CardView btnEntregas = findViewById(R.id.cardEntregas);
         CardView btnParceiros = findViewById(R.id.cardParceiros);
         CardView btnDashboard = findViewById(R.id.cardDashboard);
 
+
         btnResiduos.setOnClickListener(v -> {
             Intent intent = new Intent(this, SeusResiduosActivity.class);
+            startActivity(intent);
+        });
+
+        btncardResiduosDeParceiros.setOnClickListener(v -> {
+            Intent intent = new Intent(this, ResiduosDeParceirosActivity.class);
             startActivity(intent);
         });
 

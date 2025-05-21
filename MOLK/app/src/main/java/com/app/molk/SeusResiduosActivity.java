@@ -1,5 +1,6 @@
 package com.app.molk;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -14,11 +15,13 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.app.molk.data.models.NovoStatusBody;
 import com.app.molk.data.models.Residuo;
 import com.app.molk.data.models.ResiduosResponse;
 import com.app.molk.network.ApiService;
 import com.app.molk.network.RetrofitClient;
 import com.bumptech.glide.Glide;
+import com.google.gson.Gson;
 
 import java.util.List;
 
@@ -29,11 +32,14 @@ import retrofit2.Response;
 public class SeusResiduosActivity extends AppCompatActivity {
 
     private String token;
+    private LinearLayout containerResiduos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seus_residuos);
+
+        containerResiduos = findViewById(R.id.containerSeusResiduos);
 
         SharedPreferences prefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         String rawToken = prefs.getString("auth_token", null);
@@ -45,10 +51,7 @@ public class SeusResiduosActivity extends AppCompatActivity {
             return;
         }
 
-        // Remove espaços em branco no início/fim do token para evitar erro de assinatura
         rawToken = rawToken.trim();
-
-        // Monta o header Authorization corretamente
         token = "Bearer " + rawToken;
         Log.i("TOKEN_DEBUG", "Token usado: " + token);
 
@@ -76,6 +79,10 @@ public class SeusResiduosActivity extends AppCompatActivity {
             public void onResponse(Call<ResiduosResponse> call, Response<ResiduosResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     List<Residuo> residuos = response.body().getResiduos();
+                    Log.d("API_RESPONSE", new Gson().toJson(residuos));
+
+                    containerResiduos.removeAllViews();
+
                     for (Residuo residuo : residuos) {
                         adicionarCardResiduo(residuo);
                     }
@@ -122,11 +129,6 @@ public class SeusResiduosActivity extends AppCompatActivity {
         if (residuo.getImagem_residuo() != null && residuo.getImagem_residuo().getData() != null) {
             try {
                 String nomeArquivo = residuo.getImagem_residuo().getNomeArquivo();
-
-                // IMPORTANTE: "localhost" no Android NÃO funciona para acessar seu backend local.
-                // Substitua "localhost" pelo IP da sua máquina na rede local, por exemplo:
-                // String url = "http://192.168.0.100:3000/uploads/" + nomeArquivo;
-                // Ou use "10.0.2.2" se estiver usando emulador Android Studio
                 String url = "http://10.0.2.2:3000/uploads/" + nomeArquivo;
 
                 Glide.with(this)
@@ -140,7 +142,57 @@ public class SeusResiduosActivity extends AppCompatActivity {
             }
         }
 
-        LinearLayout container = findViewById(R.id.scrollContent);
-        container.addView(cardView);
+        Button btnStatus = cardView.findViewById(R.id.btnStatus);
+
+        String status = residuo.getStatus_residuo();
+        if (status != null) {
+            btnStatus.setText(status);
+        } else {
+            btnStatus.setText("Sem status");
+        }
+
+        btnStatus.setOnClickListener(v -> {
+            final String[] opcoes = {"disponivel", "negociando", "cancelado", "concluido"};
+
+            new android.app.AlertDialog.Builder(SeusResiduosActivity.this)
+                    .setTitle("Selecione o novo status")
+                    .setItems(opcoes, (dialog, which) -> {
+                        String novoStatus = opcoes[which];
+                        atualizarStatusResiduo(residuo.getId(), novoStatus, btnStatus);
+                    })
+                    .show();
+        });
+
+        // **Adicione esta linha para mostrar o card na tela:**
+        containerResiduos.addView(cardView);
+    }
+
+
+    // ✅ Atualizar status via API com @Body
+    private void atualizarStatusResiduo(int idResiduo, String novoStatus, Button btnStatus) {
+        ApiService apiService = RetrofitClient.getRetrofitInstance().create(ApiService.class);
+
+        NovoStatusBody statusBody = new NovoStatusBody(novoStatus);
+
+        Call<Void> call = apiService.atualizarStatusResiduo(token, idResiduo, statusBody);
+
+
+  // ✅ Passa como body
+        call.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(SeusResiduosActivity.this, "Status atualizado!", Toast.LENGTH_SHORT).show();
+                    btnStatus.setText(novoStatus);
+                } else {
+                    Toast.makeText(SeusResiduosActivity.this, "Erro ao atualizar: " + response.code(), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                Toast.makeText(SeusResiduosActivity.this, "Falha na atualização: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

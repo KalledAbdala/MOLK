@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".ResiduosDeParceirosActivity">
 
     <!-- Navbar -->
     <include
@@ -15,9 +16,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Título -->
+
+    <!-- Título centralizado -->
     <FrameLayout
-        android:id="@+id/frameLayout"
+        android:id="@+id/frameLayoutTitulo"
         android:layout_width="323dp"
         android:layout_height="44dp"
         android:layout_marginTop="108dp"
@@ -29,19 +31,19 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/montserrat_semibold"
             android:gravity="center"
-            android:text="SEUS RESÍDUOS"
+            android:text="RESIDUOS DE PARCEIROS"
             android:textColor="#3EB48D"
             android:textSize="20sp" />
     </FrameLayout>
 
-    <!-- Botão -->
+    <!-- Botão centralizado -->
     <Button
-        android:id="@+id/btnAdicionarResiduo"
+        android:id="@+id/btnFiltrarParceiros"
         android:layout_width="233dp"
         android:layout_height="55dp"
         android:layout_marginTop="16dp"
@@ -51,33 +53,37 @@
         android:paddingTop="12dp"
         android:paddingEnd="24dp"
         android:paddingBottom="12dp"
-        android:text="ADICIONAR RESÍDUO"
+        android:text="FILTRAR"
         android:textColor="#FFFFFF"
         android:textSize="14sp"
         app:cornerRadius="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayoutTitulo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Área rolável com os cards -->
+    <!-- ScrollView que ocupa o restante da tela -->
     <ScrollView
         android:id="@+id/scrollArea"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="#FFFFFF"
         android:fillViewport="true"
-        app:layout_constraintTop_toBottomOf="@+id/btnAdicionarResiduo"
+        app:layout_constraintTop_toBottomOf="@+id/btnFiltrarParceiros"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
-            android:id="@+id/containerSeusResiduos"
+            android:id="@+id/scrollContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp" />
+            android:padding="16dp">
 
+            <!-- Aqui os cards dos parceiros serão adicionados dinamicamente via Java -->
+
+        </LinearLayout>
     </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

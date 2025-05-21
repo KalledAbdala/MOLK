@@ -1,0 +1,6 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/status_disponivel" android:title="Disponível" />
+    <item android:id="@+id/status_negociando" android:title="Negociando" />
+    <item android:id="@+id/status_cancelado" android:title="Cancelado" />
+    <item android:id="@+id/status_concluido" android:title="Concluído" />
+</menu>
