@@ -1,11 +1,29 @@
 package com.app.molk.data.models;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class Residuo {
     private String tipo;
     private String descricao;
     private ImagemResiduo imagem_residuo;
+    @SerializedName("status_residuo")
+    private String status_residuo;
+
+    @SerializedName("id")
+    private int id;
+
+    // getters:
+    public String getStatus_residuo() {
+        return status_residuo;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+
 
     public String getTipo() { return tipo; }
     public void setTipo(String tipo) { this.tipo = tipo; }
@@ -33,5 +51,9 @@ public class Residuo {
 
         public List<Integer> getData() { return data; }
         public void setData(List<Integer> data) { this.data = data; }
+
+
+
+
     }
 }

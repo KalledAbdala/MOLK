@@ -3,10 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
-
-
 
     <application
         android:name=".AppContext"
@@ -20,6 +18,9 @@
         android:theme="@style/Theme.Molk"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".ResiduosDeParceirosActivity"
+            android:exported="false" />
         <activity
             android:name=".seusParceirosActivity"
             android:exported="false" />

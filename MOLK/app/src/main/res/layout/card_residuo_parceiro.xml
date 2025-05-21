@@ -14,11 +14,24 @@
         android:orientation="vertical"
         android:padding="12dp">
 
+        <!-- Nome da empresa -->
+        <TextView
+            android:id="@+id/nomeEmpresa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Empresa Exemplo LTDA"
+            android:textColor="#333333"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="8dp" />
+
         <!-- Cilindro verde com "Tipo" -->
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@drawable/bg_cilindro_verde">
+            android:background="@drawable/bg_cilindro_verde"
+            android:layout_marginBottom="0dp">
 
             <TextView
                 android:id="@+id/tipoResiduo"
@@ -31,10 +44,11 @@
                 android:textStyle="bold" />
         </FrameLayout>
 
-        <!-- FrameLayout com imagem e botão de status por cima -->
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="180dp">
+            android:layout_height="180dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp">
 
             <ImageView
                 android:id="@+id/imagemResiduo"
@@ -45,27 +59,26 @@
                 android:contentDescription="Imagem do resíduo"
                 android:clipToOutline="true" />
 
+            <!-- Botão sobre a imagem, centralizado -->
             <Button
-                android:id="@+id/btnStatus"
+                android:id="@+id/btnConectar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Conectar"
                 android:layout_gravity="center_horizontal|bottom"
                 android:layout_marginBottom="8dp"
                 android:backgroundTint="#007D53"
-                android:elevation="4dp"
-                android:text="Status"
                 android:textColor="#FFFFFF"
+                android:elevation="4dp"
                 android:textStyle="bold" />
         </FrameLayout>
-
-
-
 
         <!-- Cilindro verde claro com descrição -->
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="44dp"
-            android:background="@drawable/bg_cilindro_verde_claro">
+            android:background="@drawable/bg_cilindro_verde_claro"
+            android:layout_marginTop="0dp">
 
             <TextView
                 android:id="@+id/descricaoResiduo"
