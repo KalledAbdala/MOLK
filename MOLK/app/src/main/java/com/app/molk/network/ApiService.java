@@ -1,11 +1,14 @@
 package com.app.molk.network;
 
 import com.app.molk.data.models.CadastroResponse;
+import com.app.molk.data.models.ConectarResiduoRequest;
+import com.app.molk.data.models.Entregas;
 import com.app.molk.data.models.NovoStatusBody;
-import com.app.molk.data.models.Residuo;
+import com.app.molk.data.models.ResiduosParceirosResponse;
 import com.app.molk.data.models.ResiduosResponse;
 import com.app.molk.data.models.User;
 import com.google.gson.JsonObject;
+
 
 import java.util.List;
 
@@ -17,12 +20,11 @@ import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.Multipart;
-import retrofit2.http.PATCH;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Part;
 import retrofit2.http.Path;
-import retrofit2.http.Query;
+
 
 public interface ApiService {
 
@@ -33,7 +35,7 @@ public interface ApiService {
     Call<ResponseBody> login(@Body JsonObject loginData);
 
     @Multipart
-    @POST("/residuos/cadastrar")
+    @POST("residuos/cadastrar")
     Call<ResponseBody> cadastrarResiduo(
             @Header("Authorization") String authHeader,
             @Part MultipartBody.Part imagem,
@@ -45,10 +47,8 @@ public interface ApiService {
             @Part("id_usuario") RequestBody usuarioId
     );
 
-
-    @GET("/residuos/seus")
+    @GET("residuos/seus")
     Call<ResiduosResponse> getResiduosDoUsuario(@Header("Authorization") String token);
-
 
     @PUT("residuos/atualizar/{id}")
     Call<Void> atualizarStatusResiduo(
@@ -58,8 +58,20 @@ public interface ApiService {
     );
 
 
+    @GET("/residuos/outsiders")
+    Call<ResiduosParceirosResponse> getResiduosParceiros(@Header("Authorization") String token);
 
 
+    @POST("residuos/conectar")
+    Call<Void> conectarResiduo(
+            @Header("Authorization") String authHeader,
+            @Body ConectarResiduoRequest request
+    );
+
+    @GET("/entregas/empresa")
+    Call<List<Entregas>> getEntregasEmpresa(@Header("Authorization") String token);
+
+    @GET("/entregas/negociando")
+    Call<List<Entregas>> getEntregasNegociando(@Header("Authorization") String token);
 
 }
-

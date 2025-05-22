@@ -1,6 +1,5 @@
 package com.app.molk;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -78,7 +77,7 @@ public class SeusResiduosActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<ResiduosResponse> call, Response<ResiduosResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {
-                    List<Residuo> residuos = response.body().getResiduos();
+                    List<Residuo> residuos = response.body().residuos;
                     Log.d("API_RESPONSE", new Gson().toJson(residuos));
 
                     containerResiduos.removeAllViews();
@@ -177,7 +176,7 @@ public class SeusResiduosActivity extends AppCompatActivity {
         Call<Void> call = apiService.atualizarStatusResiduo(token, idResiduo, statusBody);
 
 
-  // ✅ Passa como body
+        // ✅ Passa como body
         call.enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
