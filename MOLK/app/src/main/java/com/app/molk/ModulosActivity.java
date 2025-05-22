@@ -37,12 +37,12 @@ public class ModulosActivity extends AppCompatActivity {
         });
 
         btnParceiros.setOnClickListener(v -> {
-            Intent intent = new Intent(this, seusParceirosActivity.class);
+            Intent intent = new Intent(this, SeusParceirosActivity.class);
             startActivity(intent);
         });
 
         btnDashboard.setOnClickListener(v -> {
-            Intent intent = new Intent(this, dashboardAcitivity.class);
+            Intent intent = new Intent(this, DashboardActivity.class);
             startActivity(intent);
         });
 

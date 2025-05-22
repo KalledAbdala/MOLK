@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LegendItemView">
+        <attr name="legendColor" format="color" />
+        <attr name="legendText" format="string" />
+    </declare-styleable>
+</resources>

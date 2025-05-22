@@ -49,11 +49,11 @@ public class cadastrarResiduoActivity extends AppCompatActivity {
         verificarPermissoes();
 
         // Use a mesma chave que você usa no login para buscar o token no SharedPreferences
-        sharedPreferences = getSharedPreferences("APP_PREFS", Context.MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
 
         // Atenção: aqui pode ser "token" ou "auth_token" dependendo de onde você salvou no login
         // Altere conforme o nome da chave usada no login
-        String rawToken = sharedPreferences.getString("token", null);
+        String rawToken = sharedPreferences.getString("auth_token", null);
         usuarioId = sharedPreferences.getInt("id_usuario", -1);
 
         if (rawToken == null || usuarioId == -1) {

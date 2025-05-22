@@ -34,13 +34,13 @@
             android:name=".ResiduosDeParceirosActivity"
             android:exported="false" />
         <activity
-            android:name=".seusParceirosActivity"
+            android:name=".SeusParceirosActivity"
             android:exported="false" />
         <activity
             android:name=".cadastrarResiduoActivity"
             android:exported="false" />
         <activity
-            android:name=".dashboardAcitivity"
+            android:name=".DashboardActivity"
             android:exported="false" />
         <activity
             android:name=".entregasActivity"
