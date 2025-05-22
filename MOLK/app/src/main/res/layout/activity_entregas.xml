@@ -16,7 +16,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-
     <!-- Título centralizado -->
     <FrameLayout
         android:id="@+id/frameLayoutTitulo"
@@ -80,12 +79,25 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- Conteúdo de exemplo -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Conteúdo dentro do scroll"
-                android:textSize="18sp" />
+
+            <!-- CardView com o mapa -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginHorizontal="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp">
+
+                <fragment
+                    android:id="@+id/map_fragment"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- Outros cards ou conteúdos podem ser adicionados abaixo -->
 
         </LinearLayout>
     </ScrollView>

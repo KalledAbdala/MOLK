@@ -2,9 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Permissões existentes -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+
+    <!-- Permissões para o Google Maps -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
     <application
         android:name=".AppContext"
@@ -18,6 +24,12 @@
         android:theme="@style/Theme.Molk"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
+        <!-- API Key Google Maps -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCccvz-7zR_IxDUde5-fa8WV6j8Cz9t4JU"/>
+
         <activity
             android:name=".ResiduosDeParceirosActivity"
             android:exported="false" />
@@ -47,8 +59,9 @@
         </activity>
         <activity
             android:name=".tela_login"
-            android:exported="false" /> <!-- Nova activity de cadastro -->
-        <activity android:name=".CadastroActivity" />
+            android:exported="false" />
+        <activity
+            android:name=".CadastroActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
