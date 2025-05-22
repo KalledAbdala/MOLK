@@ -2,7 +2,7 @@ package com.app.molk.data.models;
 
 import java.util.List;
 
-public class ResiduosResponse {
+public class ResiduosParceirosResponse {
     public String message;
-    public List<Residuo> residuos;
+    public List<ResiduoParceiro> residuos;
 }

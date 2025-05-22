@@ -98,6 +98,20 @@
             </androidx.cardview.widget.CardView>
 
             <!-- Outros cards ou conteúdos podem ser adicionados abaixo -->
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/containerCards"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"/>
+
+            </ScrollView>
+
+
 
         </LinearLayout>
     </ScrollView>
