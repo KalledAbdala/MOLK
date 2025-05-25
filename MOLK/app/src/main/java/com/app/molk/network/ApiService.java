@@ -4,6 +4,7 @@ import com.app.molk.data.models.CadastroResponse;
 import com.app.molk.data.models.ConectarResiduoRequest;
 import com.app.molk.data.models.Entregas;
 import com.app.molk.data.models.NovoStatusBody;
+import com.app.molk.data.models.OutrosUsuariosResponse;
 import com.app.molk.data.models.ResiduosParceirosResponse;
 import com.app.molk.data.models.ResiduosResponse;
 import com.app.molk.data.models.User;
@@ -73,5 +74,8 @@ public interface ApiService {
 
     @GET("/entregas/negociando")
     Call<List<Entregas>> getEntregasNegociando(@Header("Authorization") String token);
+
+    @GET("usuarios/outsiders")
+    Call<OutrosUsuariosResponse> getUsuariosParceiros(@Header("Authorization") String token);
 
 }
