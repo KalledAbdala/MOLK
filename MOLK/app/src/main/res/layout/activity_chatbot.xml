@@ -1,0 +1,55 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChatbotActivity">
+
+    <!-- Navbar -->
+    <include
+        layout="@layout/navbar"
+        android:id="@+id/navbar_included"
+        android:layout_width="match_parent"
+        android:layout_height="116dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Título centralizado -->
+    <FrameLayout
+        android:id="@+id/frameLayoutTitulo"
+        android:layout_width="323dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="108dp"
+        android:background="@drawable/bg_cilindro"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="5dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/montserrat_semibold"
+            android:gravity="center"
+            android:text="CHATBOT"
+            android:textColor="#3EB48D"
+            android:textSize="20sp" />
+    </FrameLayout>
+
+    <!-- WebView para o chatbot -->
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/frameLayoutTitulo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

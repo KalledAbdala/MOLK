@@ -19,6 +19,8 @@ public class ModulosActivity extends AppCompatActivity {
         CardView btnEntregas = findViewById(R.id.cardEntregas);
         CardView btnParceiros = findViewById(R.id.cardParceiros);
         CardView btnDashboard = findViewById(R.id.cardDashboard);
+        CardView btnChatbot = findViewById(R.id.cardChatbot);
+
 
 
         btnResiduos.setOnClickListener(v -> {
@@ -43,6 +45,11 @@ public class ModulosActivity extends AppCompatActivity {
 
         btnDashboard.setOnClickListener(v -> {
             Intent intent = new Intent(this, DashboardActivity.class);
+            startActivity(intent);
+        });
+
+        btnChatbot.setOnClickListener(v -> {
+            Intent intent = new Intent(this, ChatbotActivity.class);
             startActivity(intent);
         });
 
