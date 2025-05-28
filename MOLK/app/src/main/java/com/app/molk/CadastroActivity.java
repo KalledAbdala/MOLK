@@ -47,7 +47,6 @@ public class CadastroActivity extends AppCompatActivity {
         String nome = nomeEditText.getText().toString().trim();
         String email = emailEditText.getText().toString().trim();
         String senha = passwordEditText.getText().toString();
-        String atividade = atividadeEditText.getText().toString().trim();
         String empresa = empresaEditText.getText().toString().trim();
         String telefone = telefoneEditText.getText().toString().trim();
 
@@ -55,7 +54,6 @@ public class CadastroActivity extends AppCompatActivity {
         user.setNome(nome);
         user.setEmail(email);
         user.setSenha(senha);
-        user.setResiduo(atividade);
         user.setNome_empresa(empresa);
         user.setTelefone(telefone);
 

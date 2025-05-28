@@ -6,7 +6,7 @@ public class User {
     private String senha;
     private String telefone;
     private String nome_empresa;
-    private String residuo;  // Mesmo que não esteja no banco, você pode incluir
+    // Mesmo que não esteja no banco, você pode incluir
 
     // Getters e setters para cada campo
     public String getNome() {
@@ -49,11 +49,4 @@ public class User {
         this.nome_empresa = nome_empresa;
     }
 
-    public String getResiduo() {
-        return residuo;
-    }
-
-    public void setResiduo(String residuo) {
-        this.residuo = residuo;
-    }
 }
