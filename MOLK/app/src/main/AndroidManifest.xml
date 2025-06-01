@@ -43,6 +43,12 @@
             android:name=".DashboardActivity"
             android:exported="false" />
         <activity
+            android:name=".MeusDadosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DashEscolha"
+            android:exported="false" />
+        <activity
             android:name=".entregasActivity"
             android:exported="false" />
         <activity

@@ -44,7 +44,7 @@ public class ModulosActivity extends AppCompatActivity {
         });
 
         btnDashboard.setOnClickListener(v -> {
-            Intent intent = new Intent(this, DashboardActivity.class);
+            Intent intent = new Intent(this, DashEscolha.class);
             startActivity(intent);
         });
 

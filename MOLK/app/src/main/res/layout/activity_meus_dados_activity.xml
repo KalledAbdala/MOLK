@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".DashboardActivity">
+    tools:context=".MeusDadosActivity">
 
     <!-- Navbar -->
     <include
@@ -37,7 +37,7 @@
             android:layout_height="match_parent"
             android:fontFamily="@font/montserrat_semibold"
             android:gravity="center"
-            android:text="DASHBOARD"
+            android:text="MEUS DADOS"
             android:textColor="#3EB48D"
             android:textSize="20sp" />
     </FrameLayout>
@@ -88,9 +88,10 @@
                     android:padding="16dp">
 
                     <TextView
+                        android:id="@+id/tiposResiduosTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tipos de Resíduos"
+                        android:text="Tipos dos Meus Resíduos"
                         android:textSize="18sp"
                         android:textColor="#3EB48D"
                         android:fontFamily="@font/montserrat_semibold"
@@ -120,9 +121,10 @@
                     android:padding="16dp">
 
                     <TextView
+                        android:id="@+id/statusResiduosTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Status dos Resíduos"
+                        android:text="Status dos Meus Resíduos"
                         android:textSize="18sp"
                         android:textColor="#3EB48D"
                         android:fontFamily="@font/montserrat_semibold"
@@ -152,7 +154,8 @@
                     android:padding="16dp">
 
                     <TextView
-                        android:text="Total de Resíduos Cadastrados"
+                        android:id="@+id/totalResiduosTitle"
+                        android:text="Total dos Meus Resíduos Cadastrados"
                         android:textSize="18sp"
                         android:textColor="#3EB48D"
                         android:fontFamily="@font/montserrat_semibold"
@@ -171,8 +174,96 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Os cards "Análises complementares" e "Status do Usuário" foram removidos -->
+            <!-- Card: Empresas com Interesse nos Meus Resíduos -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardEmpresas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="12dp"
+                android:background="#FFFFFF">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/empresasInteresseTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Empresas com Interesse nos Meus Resíduos"
+                        android:textSize="18sp"
+                        android:textColor="#3EB48D"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- Cabeçalho da lista -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingBottom="8dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:text="Empresa"
+                            android:textStyle="bold"
+                            android:textColor="#333333"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Interesse"
+                            android:textStyle="bold"
+                            android:textColor="#333333"
+                            android:textSize="14sp"
+                            android:gravity="end" />
+                    </LinearLayout>
+
+                    <!-- Linha divisória -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#CCCCCC"
+                        android:layout_marginBottom="8dp" />
+
+                    <!-- Loading indicator para empresas -->
+                    <ProgressBar
+                        android:id="@+id/loadingEmpresasInteresse"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:indeterminateTint="#3EB48D"
+                        android:visibility="gone" />
+
+                    <!-- Mensagem quando não há empresas -->
+                    <TextView
+                        android:id="@+id/txtSemEmpresas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nenhuma empresa demonstrou interesse nos seus resíduos."
+                        android:textAlignment="center"
+                        android:textColor="#666666"
+                        android:padding="16dp"
+                        android:visibility="gone" />
+
+                    <!-- Container para a lista de empresas -->
+                    <LinearLayout
+                        android:id="@+id/containerEmpresas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <!-- As empresas serão adicionadas aqui dinamicamente -->
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
